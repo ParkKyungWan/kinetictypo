@@ -95,6 +95,7 @@ class App {
     }
 
     animate(t) {
+    
         requestAnimationFrame( this.animate.bind(this));
 
         this.Visual.animate(this.renderer);

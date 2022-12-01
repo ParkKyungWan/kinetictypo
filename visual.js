@@ -59,15 +59,16 @@ export class Visual {
 
     animate(r) {
         
+        const btn = document.getElementsByClassName("sticky")[0].checked;
+
         this.count++;
         if( this.count == 600){
-            console.log("reset")
             this.count = 0;
             let rand = Math.random() *25 + 65;
             let char = String.fromCharCode(rand);
             
-            let colors = '0x'+Math.round(Math.random() * 0xffffff).toString(16);
-            console.log(colors);
+            let colors = '0x'+Math.round(Math.random() * 0x000fff).toString(16);
+            
             r.background.color= colors;
 
             this.show(char, document.body.clientWidth, document.body.clientHeight, this.stage);
@@ -88,7 +89,7 @@ export class Visual {
                 item.vx -= ax;
                 item.vy -= ay;
             }
-            item.draw(); 
+            item.draw(btn); 
         }
     }
 }
